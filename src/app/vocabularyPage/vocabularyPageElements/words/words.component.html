@@ -1,0 +1,14 @@
+<html>
+    
+    <div id="left_pane">
+        <h1 id="page_header">History</h1>
+        <!-- <button>heeeejjjjjj</button> -->
+        <app-add-button (onAddWord)="AddWord($event)"></app-add-button>
+    </div>
+    
+    <div id="words">
+       <app-word-item *ngFor="let word of words" [singleWord]="word" 
+            (onDeleteWord)="DeleteWord(word)" (onEditWord)="EditWord($event)" (onStarToggle)="StarToggle($event)"></app-word-item>
+    </div>
+    
+</html>

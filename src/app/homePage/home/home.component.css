@@ -1,0 +1,54 @@
+h1{
+    padding-top: 30px;
+    padding-bottom: 70px;
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#body{
+    font-size: 20px;
+    margin-left: 50px;
+    height: 340px;
+}
+
+body{
+    background-image: url(../../../assets/app-bg-image.jpg);
+    min-height: 100vh;
+}
+
+#registerButton{
+    margin: auto;
+    font-size: 40px;
+    display: flex;
+    background-color: none;
+    border: none;
+    position: relative;
+    top: 10px; 
+    background-color: transparent;
+    height: 130px;
+    width: 384px;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    color: black;
+    background-image: url(../../../assets/button-bgimage.png);
+}
+
+#buttonimg{
+    position: absolute;
+    top: 80%;
+    left: 30%;
+    display: block;
+    height: 250px;
+}
+
+#bookImg{
+    float: right;
+    margin-right: 5%;
+    height: 340px;
+}
+
+#buttonAndImage{
+    margin-top: 30px;
+    align-items: center;
+}

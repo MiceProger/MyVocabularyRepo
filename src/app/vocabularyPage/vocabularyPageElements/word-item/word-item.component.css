@@ -1,0 +1,62 @@
+/*Styling for word card*/
+.card{
+  width: 50%;
+  background-color: #e9e9e9;
+  margin: auto;
+  margin-bottom: 10px;
+}
+
+#translation{
+  font-size: 17px;
+}
+
+#card-word{
+  margin-bottom: 15px;
+}
+
+.minor-thing{
+  float: right;
+}
+
+.bi-star, .bi-star-fill{
+  font-size: 25px;
+  float: right;
+}
+
+#comments{
+  opacity: 0.6;
+}
+
+.button-star{
+  float: right;
+  border: none;
+  background-color: transparent;
+}
+
+/*Styling for buttons*/
+.btn {
+    margin-left: 4px ;
+}
+
+.btn-success {
+  background-color: #04aa6d;
+}
+
+.btn-success:hover{
+  background-color: #00915c;
+}
+
+/*Styling for button modal*/
+.label_input_text{
+  margin-right: 10px;
+  margin-bottom: 10px;
+}
+
+.label_input_radio{
+  margin-right: 5px;
+  margin-left: 20px;
+}
+
+#first_label{
+  margin-right: 5px;
+}

@@ -1,0 +1,19 @@
+<html>
+    <div id="login">
+        <div id="loginText">Log In</div>
+         <br>
+        <form role="form" name="form" (submit)="f.form.valid && login()" #f="ngForm" novalidate>
+            <input name="UserName" type="text" placeholder="Username" [(ngModel)]="username" #un="ngModel" required autocomplete="new-password"><br>
+            <div class="alert alert-danger" *ngIf="f.submited && !un.valid"> 
+                Username is required </div>
+            <input name="Password" type="text" placeholder="Password" [(ngModel)]="password" #pw="ngModel" required autocomplete="new-password"><br>
+            <div class="alert alert-danger" *ngIf="f.submited && !un.valid"> 
+               Password is required </div>
+        </form>
+        <button name="Log In" type="submit"> Log in </button> <br>
+        <div id="signInLink">
+            Does not have an accout?<br>
+            <a id="SignIn" routerLink="/signUp">Sign In</a>
+        </div>
+    </div>
+</html>

@@ -1,0 +1,17 @@
+#sites{
+    float: right;
+    margin-top: 10px;
+    margin-right: 20px;
+    font-size: 20px;
+    font-weight: 200;
+}
+
+#sites button{
+    width: 100%;
+    background-color: white;
+    box-shadow: 3px 3px 1px #333 ;
+    border: #333 1px solid;
+    border-radius: 10px;
+    font-size: 18px;
+    margin-top: 5px;
+  }

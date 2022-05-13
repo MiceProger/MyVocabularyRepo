@@ -1,0 +1,20 @@
+#add_button{
+    background-color: #04aa6d;
+    border: #333 solid 1px;
+    border-radius: 5px;
+    color: #ffffff;
+    font-size: 30px;
+}
+
+.label_input_text{
+  margin-right: 10px;
+}
+
+.label_input_radio{
+  margin-right: 5px;
+  margin-left: 20px;
+}
+
+#first_label{
+  margin-right: 5px;
+}

@@ -1,0 +1,12 @@
+<html>
+    <nav class="navbar fixed-top">
+        <div class="container-fluid">
+          <label for="search-input"></label>
+          <div class="search-input">
+            <input #searchInput id="search-input" type="text" (keyup)="search(searchInput.value)">
+            <button class="icon-button" id="delete-button">&times;</button>
+            <button class="icon-button" id="search-button"><i class="bi bi-search"></i></button>
+          </div>
+        </div>
+      </nav>
+</html>

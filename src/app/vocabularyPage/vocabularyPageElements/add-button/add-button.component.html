@@ -1,0 +1,40 @@
+<html>
+<button id="add_button" type="button" (click)="open(AddModal)">Add word</button>
+
+  <ng-template #AddModal let-modal>
+    <div class="modal-header">
+      <h4 class="data-title">Add new word</h4>
+      <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+    </div>
+
+    <div class="modal-body">
+      <form #addForm="ngForm" (ngSubmit)="onAdd(addForm)">
+              
+        <label class="label_input_text" for="word"> Word</label>
+        <input type="text" ngModel id="word" name="word" placeholder="Word" required><br>
+        <label class="label_input_text" for="translaton">Translaton</label>
+        <input type="text" ngModel id="translaton" name="translation" placeholder="Translation" required><br>
+        <label class="label_input_text" for="coments">Coments</label>
+        <input type="text" ngModel id="coments" name="comments" placeholder="Coments"><br>
+              
+        <label id="first_label" for="status-simple-word">Simple word</label>
+        <input type="radio" ngModel id="status-simple-word" name="status" value="Simple word"  required checked>
+        <label class="label_input_radio" for="status-frasual-verb">Frasual verb</label>
+        <input type="radio" ngModel id="status-frasual-verb" name="status" value="Frasual verb" >
+        <label class="label_input_radio" for="status-idiom">Idiom</label>
+        <input type="radio" ngModel id="status-idiom" name="status" value="Idiom" ><br>
+            
+        Is this word special? 
+        <label class="label_input_radio" for="special">Yes</label>
+        <input type="radio" ngModel id="special" name="special" value="true" required>
+        <label class="label_input_radio" for="notSpecial">No</label>
+        <input type="radio" ngModel id="notSpecial" name="special" value="false" checked>
+              
+        <div class="modal-footer">
+          <button id="close-add-button"  type="button" class="btn btn-default" (click)="modal.dismiss('Cross click')">Close</button>
+          <button [disabled]="addForm.invalid" ngbAutofocus="addForm.invalid" type="submit" class="btn btn-info">Save</button>
+        </div>
+      </form>
+    </div>
+  </ng-template>
+</html>

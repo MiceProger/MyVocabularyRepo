@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <!--<link rel="stylesheet" href="src/style.css" type="text/css">-->
+  <!--<script type="text/javascript" src="http://code.jquery.com/jquery-1.4.2.min.js"></script>-->
+  <!-- <script src="assets/js/page.script.js"></script>-->
+    <title>Title of the document</title>
+  </head>
+  <body>
+
+    <div id="topnav">
+          <a class="active" href="#home">Home</a>
+          <a href="#news">News</a>
+          <a href="#contact">Contact</a>
+          <a href="#about">About</a>
+    </div>
+
+    <div id="sites">
+      <label for="search_input"> Translation from a popular sites: </label> 
+      <input type="text" name="search_input"> <br>
+      <button id="Oxford">Oxford learner`s dictionaries</button> <br>
+      <button id="Google">Google Translation</button> <br>
+      <button id="Reverso">Reverso context</button> <br>
+    </div>
+
+    <div id="left_pane">
+      History <br>
+      <!--triger the model with button-->
+      <button type="button" class="btn btn-info btn-lg" 
+      data-toggle="modal" data-target="#myModal">Add new +</button>
+    </div>
+      
+      <!--Modal-->
+    <div id="myModel" class="modal fade" role="dialog">
+      <!--Modal content-->
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">
+              &times;</button>
+            <h4 class="data-title">Add new word</h4>
+          </div>
+
+          <div class="modal-body">
+            <form>
+              <label for="word"> Word</label>
+              <input type="text" name="word"><br>
+
+             <label for="translaton">Translaton</label>
+             <input type="text" name="tranlation"><br>
+
+              <label for="coments">Coments</label>
+              <input type="text" name="coments"><br>
+
+             <label for="status-simple-word">Simple word</label>
+             <input type="radio" name="status-simple-word" value="Simple word"><br>
+             <label for="status-frasual-verb">Frasual verb</label>
+             <input type="radio" name="status-frasual-verb" value="Frasual verb"><br>
+             <label for="status-idiom">Idiom</label>
+             <input type="radio" name="status-idiom" value="Idiom">
+
+              Is this word special?
+              <label for="special">Yes</label>
+              <input type="radio" name="special" value="Yes"><br>
+              <label for="NotSpecial">No</label>
+              <input type="radio" name="NotSpecial" value="No">
+            </form>
+          </div>
+
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+
+    <div id="word_table">
+      <table>
+        <tr>
+          <td>Word</td>
+          <td>Translation</td>
+          <td>Coments</td>
+          <td>Status</td>
+          <td>Special</td>
+          <td>Adding Date</td>
+        </tr>
+        <tr *ngFor="let vocabularyWord of vocabylaryWords">
+          <td>{{vocabularyWord?.word}}</td>
+          <td>{{vocabularyWord?.tranlation}}</td>
+          <td>{{vocabularyWord?.coments}}</td>
+          <td>{{vocabularyWord?.status}}</td>
+          <td>{{vocabularyWord?.special}}</td>
+          <td>{{vocabularyWord?.addingDate}}</td>
+        </tr>
+      </table>
+    </div>
+  </body> </body><body
+</html>

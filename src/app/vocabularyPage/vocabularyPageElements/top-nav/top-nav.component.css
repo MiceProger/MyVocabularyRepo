@@ -1,0 +1,28 @@
+.fixed-top{
+    background-color: #383838;
+}
+
+#search-input{
+    height: 30px;
+    margin-right: -55px;
+    width: 300px;
+    border-radius: 10px;
+    padding-left: 5px
+}
+
+.icon-button{
+    border: none;
+    background: none;
+}
+
+#delete-button{
+    opacity: 0.3;
+}
+
+#delete-button:hover{
+    opacity: 1;
+}
+
+#search-input:focus{
+    outline: #04aa6d solid 2px;
+}
