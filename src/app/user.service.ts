@@ -1,22 +1,26 @@
 /* declare const Buffer:any; */
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { environment } from 'src/environments/environment.prod';
 
 @Injectable({
   providedIn: 'root'
 })
 export class UserService {
+
+  private apiServerUrl= environment.apiBaseUrl;
+  
   
 
   constructor(private http:HttpClient) { }
 
   login(username:string,password:string){
     const headers = new HttpHeaders({ Authorization: 'Basic ' + (username + ':' + password ) });
-    return this.http.get<boolean>("http://localhost:8080/login", {headers: headers})
+    return this.http.get<boolean>(`${this.apiServerUrl}/login`, {headers: headers})
   }
 
   signUp(username:string, password:string) {
-      let url = 'http://localhost:8080/signUp';
+      let url = `${this.apiServerUrl}/signUp`;
       let credentials = {username, password}
       console.log("Waiting for the response from the server");
       return this.http.post<boolean>(url, credentials);
