@@ -21,11 +21,11 @@
 <html>
     <div id="signUp">
         <div id="SignUpText">Sign Up</div><br>
-        <div class="emptyDiv" [ngClass]="checkForm()">{{errorMessage}}</div>
+        <div id="emptyDiv">{{errorMessage}}</div>
         <form (ngSubmit)="signUp()" #f="ngForm"  novalidate>
-            <input name="UserName" type="text" placeholder="Username" [(ngModel)]="username" #un="ngModel" required autocomplete="new-password" ><br>
-            <input name="Password" type="text" placeholder="Password" [(ngModel)]="password" #ps="ngModel" required autocomplete="new-password"><br>
-            <input name="MatchPassword" type="text" placeholder="Matching password" [(ngModel)]="machingPassword" #mp="ngModel" required autocomplete="new-password"><br>
+            <input name="UserName" type="text" placeholder="Username" [(ngModel)]="username" #un="ngModel" required ><br>
+            <input name="Password" type="text" placeholder="Password" [(ngModel)]="password" #ps="ngModel" required ><br>
+            <input name="MatchPassword" type="text" placeholder="Matching password" [(ngModel)]="machingPassword" #mp="ngModel" required ><br>
             <button name="btn btn-info" type="submit" [disabled]="f.invalid"> Sign Up </button>
         </form>
          <br>
