@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  apiBaseUrl: 'http://myvocabulary.infinityfreeapp.com/'
+  apiBaseUrl: 'https://damp-dawn-99093.herokuapp.com/'
 };
 
 /*
