@@ -10,13 +10,19 @@ export class UserService {
 
   private apiServerUrl= environment.apiBaseUrl;
   
+  private user:{username:string, password:string};
   
 
   constructor(private http:HttpClient) { }
 
+  getUser(){
+    return this.user;
+  }
+
   login(username:string,password:string){
-    const headers = new HttpHeaders({ Authorization: 'Basic ' + (username + ':' + password ) });
-    return this.http.get<boolean>(`${this.apiServerUrl}/login`, {headers: headers})
+   /*  const headers = new HttpHeaders({ Authorization: 'Basic ' + (username + ':' + password ) }); */
+    this.user = {username, password}
+    return this.http.post<boolean>(`${this.apiServerUrl}/login`, this.user)
   }
 
   signUp(username:string, password:string) {

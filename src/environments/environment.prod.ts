@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  apiBaseUrl: 'http://myvocabulary.infinityfreeapp.com/'
+  apiBaseUrl: 'https://damp-dawn-99093.herokuapp.com/'
 };
