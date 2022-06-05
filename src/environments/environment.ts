@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  apiBaseUrl: 'https://damp-dawn-99093.herokuapp.com/'
+  apiBaseUrl: 'https://damp-dawn-99093.herokuapp.com'
 };
 
 /*
