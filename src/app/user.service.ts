@@ -22,7 +22,7 @@ export class UserService {
   login(username:string,password:string){
    /*  const headers = new HttpHeaders({ Authorization: 'Basic ' + (username + ':' + password ) }); */
     this.user = {username, password}
-    return this.http.post<boolean>(`${this.apiServerUrl}/login`, this.user)
+    return this.http.post<any>(`${this.apiServerUrl}/login`, this.user)
   }
 
   signUp(username:string, password:string) {

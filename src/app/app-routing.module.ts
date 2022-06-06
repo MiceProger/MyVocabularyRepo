@@ -11,7 +11,7 @@ import { VocabularyPageComponent } from './vocabularyPage/vocabulary-page/vocabu
 const routes: Routes = [
   {path: '', redirectTo: 'home', pathMatch:'full'},
   {path: 'home', component: HomeComponent},
-  {path: 'vocabularyWords', component: VocabularyPageComponent},
+  {path: 'vocabularyWords', component: VocabularyPageComponent, canActivate:[AuthGuard]},
   {path: 'logIn', component:LoginComponent },
   {path: 'signUp', component:SignUpComponent }
   
@@ -19,7 +19,8 @@ const routes: Routes = [
 
 @NgModule({
   imports: [RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules })],
-  exports: [RouterModule]
+  exports: [RouterModule],
+  providers: [AuthGuard]
 })
 export class AppRoutingModule { 
 
