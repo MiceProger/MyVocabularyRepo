@@ -18,6 +18,6 @@ export class AuthGuard implements CanActivate {
   canActivate(){
     this.wordService.getWords().subscribe((response:VocabularyWord[])=> {this.serverAnswer = true}, (err:HttpErrorResponse)=>{this.serverAnswer = false}) 
     if(this.serverAnswer) return true;
-    else {this.router.navigateByUrl("/login"); return false}
+    else {this.router.navigateByUrl("/logIn"); return false}
   }
 }
