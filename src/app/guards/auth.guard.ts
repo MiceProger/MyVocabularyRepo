@@ -18,9 +18,9 @@ export class AuthGuard implements CanActivate {
   canActivate(){
     const user = this.userService.userValue;
     
-    if (user) {
+    if (user === "empty") {
       // authorised so return true
-      console.log('Guard alowes you to vicit /vocabulary ' + user);
+      console.log('Guard alowes you to visit /vocabulary ' + user);
       
       return true;
   }

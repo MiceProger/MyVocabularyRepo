@@ -12,7 +12,7 @@ import { User } from './User';
 })
 export class UserService {
 
-  private userSubject: BehaviorSubject<User | null>;
+  private userSubject: BehaviorSubject<Object>;
   private apiServerUrl= environment.apiBaseUrl;
   private user:User;
   
@@ -38,7 +38,7 @@ export class UserService {
   logout() {
     // remove user from local storage and set current user to null
     localStorage.removeItem('user');
-    this.userSubject.next(null);
+    this.userSubject.next("empty")
     this.router.navigateByUrl("/logIn");
 }
 
@@ -49,7 +49,7 @@ export class UserService {
       return this.http.post<boolean>(url, credentials);
   }
 
-  public get userValue():User|null  {
+  public get userValue():any  {
     return this.userSubject.value;
   }
 }
