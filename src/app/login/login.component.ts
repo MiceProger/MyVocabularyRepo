@@ -3,6 +3,7 @@ import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { UserService } from '../user.service';
+import { first } from 'rxjs/operators';
 
 @Component({
   selector: 'app-login',
@@ -47,14 +48,14 @@ export class LoginComponent {
     this.errordiv = document.getElementById("emptyDiv") ; 
 
       console.log(this.username+" : "+ this.password)
-      this.userService.login(this.username, this.password).subscribe(() => {
+      this.userService.login(this.username, this.password).pipe(first()).subscribe(() => {
         console.log("I am here with response");
         
         /* sessionStorage.setItem('token', Buffer.from(this.username + ':' + this.password, 'utf8').toString('base64')); */
         this.router.navigateByUrl("/vocabularyWords");},
       (err: HttpErrorResponse) => {
         /* String.fromCharCode.apply(null, new Uint16Array(message)); */
-        /* this.errorMessage = err.error.message; */
+        this.errorMessage = err.error.message;
         
         this.errordiv!.className = "alert alert-danger";
       }
