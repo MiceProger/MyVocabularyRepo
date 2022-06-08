@@ -11,19 +11,22 @@ import { WordService } from '../word.service';
 })
 export class AuthGuard implements CanActivate {
 
-  constructor(private router: Router, private userService:UserService, private wordService:WordService, private accountService:UserService) {}
+  constructor(private router: Router, private userService:UserService, private wordService:WordService) {}
 
   serverAnswer:boolean;
 
   canActivate(){
-    const user = this.accountService.userValue;
+    const user = this.userService.userValue;
     
     if (user) {
       // authorised so return true
+      console.log('Guard alowes you to vicit /vocabulary ' + user);
+      
       return true;
   }
 
     this.router.navigateByUrl("/logIn");
+    console.log('Guard doesn`t alowe you to vicit /vocabulary. Please log in' + user);
         return false;
   }
 }

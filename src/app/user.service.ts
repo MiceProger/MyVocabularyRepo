@@ -18,14 +18,15 @@ export class UserService {
   
   constructor(private http:HttpClient, private router:Router) { }
 
-  getUser(){
-    return this.user;
-  }
 
   login(username:string,password:string){
    /*  const headers = new HttpHeaders({ Authorization: 'Basic ' + (username + ':' + password ) }); */
     let user = {username, password}
+    
+    console.log("login request comes to the server");
+    
     return this.http.post<any>(`${this.apiServerUrl}/login`, this.user)
+
     .pipe(map(() => {
       // store user details and jwt token in local storage to keep user logged in between page refreshes
       localStorage.setItem('user', JSON.stringify(user));
