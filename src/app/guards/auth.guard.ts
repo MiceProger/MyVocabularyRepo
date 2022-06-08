@@ -16,7 +16,7 @@ export class AuthGuard implements CanActivate {
   serverAnswer:boolean;
 
   canActivate(){
-    const user = this.userService.userValue;
+    let user: any = this.userService.userValue;
     
     if (user) {
       // authorised so return true

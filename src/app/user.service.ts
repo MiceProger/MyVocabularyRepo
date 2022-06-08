@@ -20,37 +20,33 @@ export class UserService {
 
 
   login(username:string,password:string){
-   
-    this.userSubject.next(true);
-    this.router.navigateByUrl("/vocabularyWords")
-    /* let user = {username, password}
+   /*  const headers = new HttpHeaders({ Authorization: 'Basic ' + (username + ':' + password ) }); */
+    let user = {username, password}
     
     console.log("login request comes to the server");
     
     return this.http.post<any>(`${this.apiServerUrl}/login`, this.user)
 
     .pipe(map(() => {
+      // store user details and jwt token in local storage to keep user logged in between page refreshes
       localStorage.setItem('user', JSON.stringify(user));
       this.userSubject.next(user);
       return user;
-  })); */
+  }));
   }
 
   logout() {
-    this.userSubject.next(false);
     // remove user from local storage and set current user to null
-    /* localStorage.removeItem('user');
+    localStorage.removeItem('user');
     this.userSubject.next("empty")
-    this.router.navigateByUrl("/logIn"); */
+    this.router.navigateByUrl("/logIn");
 }
 
   signUp(username:string, password:string) {
-    this.userSubject.next(true);
-    this.router.navigateByUrl("/vocabularyWords")
-      /* let url = `${this.apiServerUrl}/signUp`;
+      let url = `${this.apiServerUrl}/signUp`;
       let credentials = {username, password}
       console.log("Waiting for the response from the server");
-      return this.http.post<boolean>(url, credentials); */
+      return this.http.post<boolean>(url, credentials);
   }
 
   public get userValue():any  {

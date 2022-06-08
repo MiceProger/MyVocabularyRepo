@@ -27,14 +27,11 @@ export class SignUpComponent implements OnInit {
 
 
   signUp() {
-    this.userService.signUp("test", "test");
-    /* 
     this.errordiv = document.getElementById("emptyDiv") ; 
       this.preCheckForm();
       if(this.errorable) return;
       console.log(this.username+" : "+ this.password)
       this.userService.signUp(this.username, this.password).subscribe(() => {
-        
         
         this.router.navigateByUrl("/vocabularyWords");},
       (err: HttpErrorResponse) => {
@@ -44,7 +41,7 @@ export class SignUpComponent implements OnInit {
         
         this.errordiv!.className = "alert alert-danger";
       }
-    ) */
+    )
   }
   
 
