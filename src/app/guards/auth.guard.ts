@@ -18,15 +18,15 @@ export class AuthGuard implements CanActivate {
   canActivate(){
     const user = this.userService.userValue;
     
-    if (user === "empty") {
+    if (user) {
       // authorised so return true
-      console.log('Guard alowes you to visit /vocabulary ' + user);
+      //console.log('Guard alowes you to visit /vocabulary ' + user);
       
       return true;
   }
 
     this.router.navigateByUrl("/logIn");
-    console.log('Guard doesn`t alowe you to vicit /vocabulary. Please log in' + user);
+    //console.log('Guard doesn`t alowe you to vicit /vocabulary. Please log in' + user);
         return false;
   }
 }
