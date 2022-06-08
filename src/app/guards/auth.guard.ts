@@ -20,7 +20,7 @@ export class AuthGuard implements CanActivate {
     
     if (user === "empty") {
       // authorised so return true
-      // console.log('Guard alowes you to visit /vocabulary ' + user);
+      console.log('Guard alowes you to visit /vocabulary ' + user);
       
       return true;
   }
