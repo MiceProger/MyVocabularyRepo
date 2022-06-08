@@ -16,7 +16,10 @@ export class UserService {
   private apiServerUrl= environment.apiBaseUrl;
   private user:any;
   
-  constructor(private http:HttpClient, private router:Router) { }
+  constructor(private http:HttpClient, private router:Router) { 
+    this.userSubject = new BehaviorSubject<User>(JSON.parse(localStorage.getItem('user')!));
+    this.user = this.userSubject.asObservable(); 
+  }
 
 
   login(username:string,password:string){
@@ -25,9 +28,8 @@ export class UserService {
     
     console.log("login request comes to the server");
     
-    return this.http.post<any>(`${this.apiServerUrl}/login`, this.user)
-
-    .pipe(map(() => {
+    return this.http.post<any>(`${this.apiServerUrl}/login`, this.user).pipe(map((user) => {
+      
       // store user details and jwt token in local storage to keep user logged in between page refreshes
       localStorage.setItem('user', JSON.stringify(user));
       this.userSubject.next(user);
@@ -49,7 +51,7 @@ export class UserService {
       return this.http.post<boolean>(url, credentials);
   }
 
-  public get userValue():any  {
+  public get userValue(): User {
     return this.userSubject.value;
-  }
+}
 }

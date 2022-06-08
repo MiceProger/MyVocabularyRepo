@@ -48,18 +48,19 @@ export class LoginComponent {
     this.errordiv = document.getElementById("emptyDiv") ; 
 
       console.log(this.username+" : "+ this.password)
-      this.userService.login(this.username, this.password).pipe(first()).subscribe(() => {
-        console.log("Response from the server comes in lets navigate to /vocabulary.");
-        
-        /* sessionStorage.setItem('token', Buffer.from(this.username + ':' + this.password, 'utf8').toString('base64')); */
-        this.router.navigateByUrl("/vocabularyWords");},
-      (err: HttpErrorResponse) => {
-        /* String.fromCharCode.apply(null, new Uint16Array(message)); */
-        console.log("Server throws eror"+ err);
-        
-        this.errorMessage = err.error.message;
-        
-        this.errordiv!.className = "alert alert-danger";
+      this.userService.login(this.username, this.password).pipe(first()).subscribe({
+        next : () => {
+          console.log("Response from the server comes in lets navigate to /vocabulary.");
+
+          this.router.navigateByUrl("/vocabularyWords");
+        },
+
+        error: (err: HttpErrorResponse) => {
+          console.log("Server throws eror"+ err);
+          
+          this.errorMessage = err.error.message;
+          this.errordiv!.className = "alert alert-danger";
+        }
       }
     )
   }
