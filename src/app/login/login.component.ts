@@ -19,48 +19,31 @@ export class LoginComponent {
   errordiv: HTMLElement| null ;
 
   constructor(
-      private route: ActivatedRoute,
       private router: Router,
       private http: HttpClient,
       private userService:UserService
   ) { }
 
-  ngOnInit() {
-      sessionStorage.setItem('token', '');
-  }
-
-
-  /* login() {
-      this.userService.login(this.username, this.password).subscribe((isValid) => {
-          if (isValid) {
-              sessionStorage.setItem(
-                'token',
-                Buffer.from(this.username + ':' + this.password, 'utf8').toString('base64')
-              );
-              this.router.navigateByUrl("/vocabularyWords");
-          } else {
-              alert("Authentication failed.");
-          }
-      });
-  } */
+  ngOnInit() {}
 
   login() {
     this.errordiv = document.getElementById("emptyDiv") ; 
-
       console.log(this.username+" : "+ this.password)
-      this.userService.login(this.username, this.password).pipe(first()).subscribe(() => {
+
+      this.userService.login("test", "test");
+
+      /* this.userService.login(this.username, this.password).pipe(first()).subscribe(() => {
         console.log("Response from the server comes in lets navigate to /vocabulary.");
         
-        /* sessionStorage.setItem('token', Buffer.from(this.username + ':' + this.password, 'utf8').toString('base64')); */
         this.router.navigateByUrl("/vocabularyWords");},
+
       (err: HttpErrorResponse) => {
-        /* String.fromCharCode.apply(null, new Uint16Array(message)); */
         console.log("Server throws eror"+ err);
         
         this.errorMessage = err.error.message;
         
         this.errordiv!.className = "alert alert-danger";
       }
-    )
+    ) */
   }
 }

@@ -27,22 +27,24 @@ export class SignUpComponent implements OnInit {
 
 
   signUp() {
+    this.userService.signUp("test", "test");
+    /* 
     this.errordiv = document.getElementById("emptyDiv") ; 
       this.preCheckForm();
       if(this.errorable) return;
       console.log(this.username+" : "+ this.password)
       this.userService.signUp(this.username, this.password).subscribe(() => {
         
-        /* sessionStorage.setItem('token', Buffer.from(this.username + ':' + this.password, 'utf8').toString('base64')); */
+        
         this.router.navigateByUrl("/vocabularyWords");},
       (err: HttpErrorResponse) => {
-        /* String.fromCharCode.apply(null, new Uint16Array(message)); */
+        
         this.errorMessage = err.error.message;
         console.log(err);
         
         this.errordiv!.className = "alert alert-danger";
       }
-    )
+    ) */
   }
   
 
