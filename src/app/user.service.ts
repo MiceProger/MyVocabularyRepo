@@ -2,7 +2,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
-import { BehaviorSubject } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { environment } from 'src/environments/environment.prod';
 import { User } from './User';
@@ -14,7 +14,7 @@ export class UserService {
 
   private userSubject: BehaviorSubject<any>;
   private apiServerUrl= environment.apiBaseUrl;
-  private user:any;
+  public user: Observable<User>;
   
   constructor(private http:HttpClient, private router:Router) { 
     this.userSubject = new BehaviorSubject<User>(JSON.parse(localStorage.getItem('user')!));
@@ -24,11 +24,10 @@ export class UserService {
 
   login(username:string,password:string){
    /*  const headers = new HttpHeaders({ Authorization: 'Basic ' + (username + ':' + password ) }); */
-    const user = {username, password}
     
     console.log("login request comes to the server");
     
-    return this.http.post<any>(`${this.apiServerUrl}/login`, this.user).pipe(map((user) => {
+    return this.http.post<User>(`${this.apiServerUrl}/login`, {username, password}).pipe(map((user) => {
 
       // store user details and jwt token in local storage to keep user logged in between page refreshes
       localStorage.setItem('user', JSON.stringify(user));
