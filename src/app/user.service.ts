@@ -27,7 +27,8 @@ export class UserService {
     
     console.log("login request comes to the server");
     
-    return this.http.post<User>(`${this.apiServerUrl}/login`, {username, password}).pipe(map((user) => {
+    return this.http.post<User>(`${this.apiServerUrl}/login`, {username, password})
+    .pipe(map(user => {
 
       console.log("hello " + user);
       
@@ -35,7 +36,7 @@ export class UserService {
       localStorage.setItem('user', JSON.stringify(user));
       this.userSubject.next(user);
       return user;
-  }));
+    }));
   }
 
   logout() {
