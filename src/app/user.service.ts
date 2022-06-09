@@ -29,6 +29,8 @@ export class UserService {
     
     return this.http.post<User>(`${this.apiServerUrl}/login`, {username, password}).pipe(map((user) => {
 
+      console.log("hello " + user);
+      
       // store user details and jwt token in local storage to keep user logged in between page refreshes
       localStorage.setItem('user', JSON.stringify(user));
       this.userSubject.next(user);

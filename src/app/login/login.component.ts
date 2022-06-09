@@ -50,7 +50,7 @@ export class LoginComponent {
       console.log(this.username+" : "+ this.password)
       this.userService.login(this.username, this.password).pipe(first()).subscribe({
         next : () => {
-          console.log("Response from the server comes in lets navigate to /vocabulary.");
+          console.log("Response from the server comes in lets navigate to /vocabulary. ",  this.userService.userValue);
 
           this.router.navigateByUrl("/vocabularyWords");
         },

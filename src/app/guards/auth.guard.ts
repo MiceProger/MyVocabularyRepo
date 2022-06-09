@@ -2,6 +2,7 @@ import { HttpErrorResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { ActivatedRouteSnapshot, CanActivate, CanLoad, Route, Router, RouterStateSnapshot, UrlSegment, UrlTree } from '@angular/router';
 import { Observable } from 'rxjs';
+import { User } from '../User';
 import { UserService } from '../user.service';
 import { VocabularyWord } from '../vocabularyWord';
 import { WordService } from '../word.service';
@@ -16,17 +17,17 @@ export class AuthGuard implements CanActivate {
   serverAnswer:boolean;
 
   canActivate(){
-    let user: any = this.userService.userValue;
+    const user: User = this.userService.userValue;
     
     if (user) {
       // authorised so return true
-      //console.log('Guard alowes you to visit /vocabulary ' + user);
+      console.log('Guard alowes you to visit /vocabulary ' + user);
       
       return true;
   }
 
     this.router.navigateByUrl("/logIn");
-    //console.log('Guard doesn`t alowe you to vicit /vocabulary. Please log in' + user);
+    console.log('Guard doesn`t alowe you to visit /vocabulary. Please log in' + user);
         return false;
   }
 }
