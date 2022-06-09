@@ -25,7 +25,7 @@ export class UserService {
   login(username:string,password:string){
    /*  const headers = new HttpHeaders({ Authorization: 'Basic ' + (username + ':' + password ) }); */
     const logedUser:User = {username, password};
-    console.log("login request comes to the server");
+    console.log("login request comes to the server : ", logedUser);
     
     return this.http.post<User>(`${this.apiServerUrl}/login`, {username, password})
     .pipe(map( () => {
