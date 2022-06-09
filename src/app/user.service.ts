@@ -1,9 +1,9 @@
-/* declare const Buffer:any; */
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
+
 import { environment } from 'src/environments/environment.prod';
 import { User } from './User';
 
@@ -42,7 +42,7 @@ export class UserService {
   logout() {
     // remove user from local storage and set current user to null
     localStorage.removeItem('user');
-    this.userSubject.next("empty")
+    this.userSubject.next(null)
     this.router.navigateByUrl("/logIn");
 }
 
