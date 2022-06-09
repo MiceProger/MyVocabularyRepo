@@ -24,6 +24,6 @@ a:hover {
 }
 
 #username-label{
-    float: left;
-    font-size: smaller;
+    float: right;
+    color: white;
 }
