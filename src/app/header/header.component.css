@@ -25,5 +25,10 @@ a:hover {
 
 #username-label{
     float: right;
+    position: absolute;
+    top: 50%;
+    left: 15px;
+    
     color: white;
+    font-size: larger;
 }
