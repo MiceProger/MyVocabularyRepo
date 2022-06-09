@@ -1,4 +1,5 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { User } from '../User';
 import { UserService } from '../user.service';
 
 
@@ -9,7 +10,7 @@ import { UserService } from '../user.service';
 })
 export class HeaderComponent {
   @Output() public logOut:EventEmitter<void> = new EventEmitter<void>();
-  public username:string = this.userService.userValue.username;
+  public currentUser:User = this.userService.userValue;
 
   constructor( private userService:UserService) {  }
 
