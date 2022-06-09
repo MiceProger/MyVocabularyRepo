@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
+import { userInfo } from 'os';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
@@ -24,18 +25,18 @@ export class UserService {
 
   login(username:string,password:string){
    /*  const headers = new HttpHeaders({ Authorization: 'Basic ' + (username + ':' + password ) }); */
-    
+    const logedUser:User = {username, password};
     console.log("login request comes to the server");
     
     return this.http.post<User>(`${this.apiServerUrl}/login`, {username, password})
-    .pipe(map(user => {
+    .pipe(map( () => {
 
-      console.log("hello " + user);
+      console.log("hello " + logedUser);
       
       // store user details and jwt token in local storage to keep user logged in between page refreshes
-      localStorage.setItem('user', JSON.stringify(user));
-      this.userSubject.next(user);
-      return user;
+      localStorage.setItem('user', JSON.stringify(logedUser));
+      this.userSubject.next(logedUser);
+      return logedUser;
     }));
   }
 
