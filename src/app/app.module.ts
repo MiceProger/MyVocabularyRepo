@@ -13,7 +13,7 @@ import { SitesPaneComponent } from './vocabularyPage/vocabularyPageElements/site
 import { TopNavComponent } from './vocabularyPage/vocabularyPageElements/top-nav/top-nav.component';
 import { WordItemComponent } from './vocabularyPage/vocabularyPageElements/word-item/word-item.component';
 import { WordsComponent } from './vocabularyPage/vocabularyPageElements/words/words.component';
-import { HomeComponent } from './homePage/home/home.component';
+import { HomeComponent } from './homePage/home.component';
 import { HeaderComponent } from './header/header.component';
 import { LoginComponent } from './login/login.component';
 import { SignUpComponent } from './sign-up/sign-up.component';

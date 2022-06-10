@@ -3,7 +3,7 @@ import { PreloadAllModules, Router, RouterModule, Routes } from '@angular/router
 import { AppComponent } from './app.component';
 import { AppModule } from './app.module';
 import { AuthGuard } from './guards/auth.guard';
-import { HomeComponent } from './homePage/home/home.component';
+import { HomeComponent } from './homePage/home.component';
 import { LoginComponent } from './login/login.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
 import { VocabularyPageComponent } from './vocabularyPage/vocabulary-page/vocabulary-page.component';
