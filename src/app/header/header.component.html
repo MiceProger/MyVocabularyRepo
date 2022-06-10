@@ -3,7 +3,7 @@
         <a id="active" routerLink="/home">Home</a>
         <a id="signUpLink" routerLink="/signUp">Sign Up</a>
         <a id="LogInLink" routerLink="/logIn"> Log in</a>
-        <a id="vocabularyWords" routerLink="/vocabularyWords"> Vocabulary </a>
+        <a id="vocabularyWords" routerLink="/vocabularyWords" (click)="click()"> Vocabulary </a>
         <p id="username-label">{{currentUser.username}}</p>
        <!--  <a id="logOutLink" (click)="logout()"></a> -->
     </div>

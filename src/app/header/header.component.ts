@@ -14,6 +14,11 @@ export class HeaderComponent {
 
   constructor( private userService:UserService) {  }
 
+  click(){
+    console.log("click");
+    
+  }
+
   logout(): void {
     this.logOut.emit();
   }
