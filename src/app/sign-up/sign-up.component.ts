@@ -46,12 +46,25 @@ export class SignUpComponent implements OnInit {
   
 
   preCheckForm(): string|any{
+
+    if(this.username.length < 8){
+      this.errorMessage = "your user name is too short"
+      this.errordiv!.className = "alert alert-danger";
+      this.errorable = true;
+    }
+
+    else if(this.password.length < 8){
+      this.errorMessage = "your password is too short"
+      this.errordiv!.className = "alert alert-danger";
+      this.errorable = true;
+    }
     
-    if(this.password != this.machingPassword){
+    else if(this.password != this.machingPassword){
       this.errorMessage = "maching password is not mathing to your password"
       this.errordiv!.className = "alert alert-danger";
       this.errorable = true;
     }
+
     else{
       this.errordiv!.className = "emptyDiv";
       this.errorMessage = '';

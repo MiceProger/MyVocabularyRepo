@@ -50,7 +50,7 @@ export class UserService {
       let url = `${this.apiServerUrl}/signUp`;
       let credentials = {username, password}
       console.log("Waiting for the response from the server");
-      return this.http.post<boolean>(url, credentials);
+      return this.http.post<boolean>(url, credentials).pipe(() => this.login(username, password));
   }
 
   public get userValue(): User {
