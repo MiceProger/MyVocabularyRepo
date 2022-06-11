@@ -5,6 +5,7 @@
         <a id="LogInLink" routerLink="/logIn"> Log in</a>
         <a id="vocabularyWords" routerLink="/vocabularyWords" > Vocabulary </a>
         <a id="logOutLink" (click)="logout()">Log out</a>
-        <p id="username-label">{{currentUser.username}}</p>
+        <img id="userIcon" src="asset/userIcon.ico" alt="userIcon">
+        <p id="username">{{currentUser.username}}</p>
     </div>
 </html>

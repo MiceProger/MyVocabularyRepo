@@ -23,7 +23,7 @@ a:hover {
     color: white;
 }
 
-#username-label{
+#username{
     float: right;
     position: absolute;
     top: 0.3cm;
@@ -31,4 +31,12 @@ a:hover {
     
     color: white;
     font-size: larger;
+}
+
+#userIcon{
+    float: right;
+    position: absolute;
+    top: 0.3cm;
+    right: 6cm;
+    filter: invert(1);
 }
