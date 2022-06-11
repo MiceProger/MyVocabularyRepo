@@ -36,7 +36,8 @@ a:hover {
 #userIcon{
     float: right;
     position: absolute;
-    top: 0.3cm;
+    top: 0.25cm;
     right: 6cm;
     filter: invert(1);
+    width: 1cm;
 }
