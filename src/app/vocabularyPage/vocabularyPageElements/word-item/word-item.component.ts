@@ -29,13 +29,16 @@ export class WordItemComponent implements AfterViewInit{
 
   onDelete(){this.onDeleteWord.emit(this.singleWord);}
 
-  onEdit(word: VocabularyWord){this.onEditWord.emit(word);}
+  onEdit(word: VocabularyWord){
+    console.log("My new word : "+ word);
+    word.formattedDate = this.singleWord.formattedDate;
+    word.id = this.singleWord.id;
+    word.user = this.singleWord.user;
+
+    this.onEditWord.emit(word);
+  }
 
   open(modal: any){this.modalService.open(modal); }
-
-  /* public static starIconEmpty : ElementRef;
-  public static starIconFull : ElementRef; 
-  public static starIconContainer: ElementRef;*/
 
   @ViewChild("starIcon") public iconContainer : ElementRef;
   private createStarIcons() {

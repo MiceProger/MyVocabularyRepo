@@ -3,6 +3,7 @@ import { AfterViewInit, Component, ElementRef, OnInit, QueryList, Renderer2, Vie
 import { VocabularyWord } from '../../../vocabularyWord';
 import { WordItemComponent } from '../word-item/word-item.component';
 import { WordService } from '../../../word.service';
+import { UserService } from 'src/app/user.service';
 
 @Component({
   selector: 'app-words',
@@ -12,7 +13,7 @@ import { WordService } from '../../../word.service';
 export class WordsComponent implements OnInit {
   public words: VocabularyWord[] = [];
 
-  constructor(private wordService: WordService, private renderer: Renderer2){}
+  constructor(private wordService: WordService, private userService: UserService, private renderer: Renderer2){}
 
   //@ViewChildren("input-container") public inputContainer: ElementRef;
 
@@ -80,7 +81,8 @@ export class WordsComponent implements OnInit {
     console.log("Now I`m trying to save a word to DB");
         
     console.log("check form value : ", word);
-    
+
+    word.user = this.userService.userValue;
 
     document.getElementById('close-add-button')?.click();
     console.log("Now I clicked on close button");

@@ -1,3 +1,5 @@
+import { User } from "./User";
+
 export interface VocabularyWord{
     id: number;
     word: string;
@@ -6,4 +8,5 @@ export interface VocabularyWord{
     formattedDate: string;
     status: string;
     special: boolean;
+    user:User;
 }

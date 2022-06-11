@@ -21,8 +21,6 @@
     <div class="modal-body">
       <form #editForm="ngForm" (ngSubmit)="onEdit(editForm.value)">
         <div id="inputcont" #inputcont >
-            <input type="hidden" ngModel="{{singleWord?.id}}" name="id">
-            <input type="hidden" ngModel="{{singleWord?.formattedDate}}" name="formatted date">
 
             <label class="label_input_text" for="word"> Word</label>
             <input ngModel="{{singleWord?.word}}" type="text"  id="word" name="word" placeholder="Word" ><br>
