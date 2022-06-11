@@ -9,18 +9,15 @@ import { UserService } from '../user.service';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent {
-  @Output() public logOut:EventEmitter<void> = new EventEmitter<void>();
-  public currentUser:User = this.userService.userValue;
+  //@Output() public logOut:EventEmitter<void> = new EventEmitter<void>();
+  public currentUser:User;
 
-  constructor( private userService:UserService) {  }
-
-  click(){
-    console.log("click");
-    
+  constructor( private userService:UserService) { 
+    this.userService.user.subscribe(((user:User) => {this.currentUser = user})) 
   }
 
   logout(): void {
-    this.logOut.emit();
+    this.userService.logout();
   }
 
 }
