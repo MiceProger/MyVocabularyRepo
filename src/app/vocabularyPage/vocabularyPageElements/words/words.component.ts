@@ -82,7 +82,7 @@ export class WordsComponent implements OnInit {
         
     console.log("check form value : ", word);
 
-    word.user = this.userService.userValue;
+    word.username = this.userService.userValue.username;
 
     document.getElementById('close-add-button')?.click();
     console.log("Now I clicked on close button");

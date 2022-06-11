@@ -33,7 +33,7 @@ export class WordItemComponent implements AfterViewInit{
     console.log("My new word : "+ word);
     word.formattedDate = this.singleWord.formattedDate;
     word.id = this.singleWord.id;
-    word.user = this.singleWord.user;
+    word.username = this.singleWord.username;
 
     this.onEditWord.emit(word);
   }

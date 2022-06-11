@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment.prod';
+import { UserService } from './user.service';
 import { VocabularyWord } from './vocabularyWord';
 
 @Injectable({
@@ -9,13 +10,15 @@ import { VocabularyWord } from './vocabularyWord';
 })
 export class WordService {
   private apiServerUrl= environment.apiBaseUrl;
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private userService:UserService) { }
 
   public getWords(): Observable<VocabularyWord[]>{
     console.log("making response to the back-end");
+
+    const username = this.userService.userValue.username;
     
     return this.http.get<VocabularyWord[]>
-    (`${this.apiServerUrl}/vocabulary`);
+    (`${this.apiServerUrl}/vocabulary/${username}`);
 }
 
 public addWord(word: VocabularyWord): Observable<VocabularyWord>{

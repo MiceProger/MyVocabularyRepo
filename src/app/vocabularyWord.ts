@@ -8,5 +8,5 @@ export interface VocabularyWord{
     formattedDate: string;
     status: string;
     special: boolean;
-    user:User;
+    username:string;
 }
