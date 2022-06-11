@@ -8,7 +8,7 @@
     </div>
 
     <div class="modal-body">
-      <form #addForm="ngForm" (ngSubmit)="onAdd(addForm)">
+      <form #addForm="ngForm" (ngSubmit) = "onAdd(addForm)"> 
               
         <label class="label_input_text" for="word"> Word</label>
         <input type="text" ngModel id="word" name="word" placeholder="Word" required><br>
