@@ -10,10 +10,10 @@ import { UserService } from '../user.service';
 })
 export class HeaderComponent {
   //@Output() public logOut:EventEmitter<void> = new EventEmitter<void>();
-  public currentUser:User;
+  public currentUser?:User;
 
   constructor( private userService:UserService) { 
-    this.userService.user.subscribe(((user:User) => {this.currentUser = user})) 
+    this.userService.user.subscribe((user:User) => {this.currentUser = user}, ()=>{this.currentUser = undefined}) 
   }
 
   logout(): void {
