@@ -2,6 +2,7 @@ declare const Buffer:any;
 import { HttpClient, HttpErrorResponse, HttpResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { User } from '../User';
 import { UserService } from '../user.service';
 
 @Component({
@@ -27,11 +28,13 @@ export class SignUpComponent implements OnInit {
 
 
   signUp() {
+    const user:User = {username: this.username, password: this.password};
     this.errordiv = document.getElementById("emptyDiv") ; 
       this.preCheckForm();
       if(this.errorable) return;
-      console.log(this.username+" : "+ this.password)
       this.userService.signUp(this.username, this.password).subscribe(() => {
+        console.log("registration is successful so lets log in " + user);
+        this.userService.login(this.username, this.password).subscribe();
         
         this.router.navigateByUrl("/vocabularyWords");},
       (err: HttpErrorResponse) => {
