@@ -9,21 +9,21 @@ import { UserService } from '../user.service';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent {
-  //@Output() public logOut:EventEmitter<void> = new EventEmitter<void>();
   public currentUser?:User;
 
   constructor( private userService:UserService) { 
     this.userService.user.subscribe((user:User) => {
+      console.log("UserSubject has changed with : " + user)
       this.currentUser = user; 
       document.getElementById("userIcon")!.style.visibility = "visible"
-      console.log("Hello :"+document.getElementById("userIcon"))
     },
      ()=>{
+      console.log("UserSubject has been cleared ")
        this.currentUser = undefined, 
       document.getElementById("userIcon")!.style.visibility = "hidden" 
       console.log("Hello :"+document.getElementById("userIcon"));
      }
-     ) 
+     ); 
   }
 
   logout(): void {
