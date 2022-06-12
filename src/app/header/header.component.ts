@@ -13,7 +13,9 @@ export class HeaderComponent {
   public currentUser?:User;
 
   constructor( private userService:UserService) { 
-    this.userService.user.subscribe((user:User) => {this.currentUser = user}, ()=>{this.currentUser = undefined}) 
+    this.userService.user.subscribe((user:User) => {this.currentUser = user; document.getElementById("userIcon")!.style.visibility = "visible"},
+     ()=>{this.currentUser = undefined, document.getElementById("userIcon")!.style.visibility = "hidden"}
+     ) 
   }
 
   logout(): void {

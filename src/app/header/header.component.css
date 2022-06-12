@@ -38,6 +38,5 @@ a:hover {
     float: right;
     position: absolute;
     top: 0.25cm;
-    filter: invert(1);
     width: 1cm;
 }
