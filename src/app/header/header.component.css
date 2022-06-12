@@ -28,6 +28,7 @@ a:hover {
     position: absolute;
     top: 0.3cm;
     right: 2cm;
+    margin-left: 1cm;
     
     color: white;
     font-size: larger;
@@ -37,7 +38,6 @@ a:hover {
     float: right;
     position: absolute;
     top: 0.25cm;
-    right: 6cm;
     filter: invert(1);
     width: 1cm;
 }
