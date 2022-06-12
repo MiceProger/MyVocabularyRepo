@@ -16,12 +16,12 @@ export class HeaderComponent {
     this.userService.user.subscribe((user:User) => {
       this.currentUser = user; 
       document.getElementById("userIcon")!.style.visibility = "visible"
-      console.log(document.getElementById("userIcon"))
+      console.log("Hello :"+document.getElementById("userIcon"))
     },
      ()=>{
        this.currentUser = undefined, 
       document.getElementById("userIcon")!.style.visibility = "hidden" 
-      console.log(document.getElementById("userIcon"));
+      console.log("Hello :"+document.getElementById("userIcon"));
      }
      ) 
   }

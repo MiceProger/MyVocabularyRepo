@@ -25,10 +25,8 @@ a:hover {
 
 #username{
     float: right;
-    position: absolute;
-    top: 0.3cm;
-    right: 2cm;
-    margin-left: 1cm;
+    margin-top: 0.3cm;
+    margin-right: 2cm;
     
     color: white;
     font-size: larger;
@@ -36,7 +34,7 @@ a:hover {
 
 #userIcon{
     float: right;
-    position: absolute;
-    top: 0.25cm;
+    margin-top: 0.25cm;
+    margin-right: 1cm;
     width: 1cm;
 }
