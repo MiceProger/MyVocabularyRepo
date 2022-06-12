@@ -15,15 +15,10 @@ export class HeaderComponent {
     this.userService.user.subscribe((user:User) => {
       console.log("UserSubject has changed with : " + user)
       this.currentUser = user; 
-      document.getElementById("userIcon")!.style.visibility = "visible"
-    },
-     ()=>{
-      console.log("UserSubject has been cleared ")
-       this.currentUser = undefined, 
-      document.getElementById("userIcon")!.style.visibility = "hidden" 
-      console.log("Hello :"+document.getElementById("userIcon"));
-     }
-     ); 
+      if(user) document.getElementById("userIcon")!.style.visibility = "visible"
+      else document.getElementById("userIcon")!.style.visibility = "hidden"
+    }
+    ); 
   }
 
   logout(): void {
