@@ -42,7 +42,7 @@ export class UserService {
   logout() {
     // remove user from local storage and set current user to null
     localStorage.removeItem('user');
-    this.userSubject.next(null);
+    this.userSubject.next(undefined);
     this.router.navigateByUrl("/logIn");
 }
 
