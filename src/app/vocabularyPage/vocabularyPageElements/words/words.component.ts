@@ -105,6 +105,7 @@ export class WordsComponent implements OnInit {
   public StarToggle(wordItem: WordItemComponent){
       
     wordItem.singleWord.special = !wordItem.singleWord.special;
+    this.EditWord(wordItem.singleWord);
     console.log("inside StarToggle() with this component:", wordItem.singleWord.special);
 
     if(wordItem.singleWord.special){

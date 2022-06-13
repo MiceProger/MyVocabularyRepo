@@ -13,7 +13,7 @@ export class HeaderComponent implements AfterViewInit{
 
   display:string;
 
-  constructor( private userService:UserService, private renderer:Renderer2) {}
+  constructor( private userService:UserService) {}
 
   @ViewChild("userImg") private userImg:ElementRef;
   ngAfterViewInit(): void {
