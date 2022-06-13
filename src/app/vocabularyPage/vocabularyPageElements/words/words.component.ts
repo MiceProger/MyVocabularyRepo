@@ -108,14 +108,14 @@ export class WordsComponent implements OnInit {
     this.EditWord(wordItem.singleWord);
     console.log("inside StarToggle() with this component:", wordItem.singleWord.special);
 
-    if(wordItem.singleWord.special){
+    /* if(wordItem.singleWord.special){
         this.renderer.removeChild(wordItem.iconContainer.nativeElement, wordItem.starIconEmpty);
         this.renderer.appendChild(wordItem.iconContainer.nativeElement, wordItem.starIconFull);
     }
     else{
         this.renderer.removeChild(wordItem.iconContainer.nativeElement, wordItem.starIconFull);
         this.renderer.appendChild(wordItem.iconContainer.nativeElement, wordItem.starIconEmpty);
-    }
+    } */
   }
   
 }
