@@ -12,10 +12,9 @@ import { UserService } from 'src/app/user.service';
 })
 export class WordsComponent implements OnInit {
   public words: VocabularyWord[] = [];
+  public display: string;
 
   constructor(private wordService: WordService, private userService: UserService, private renderer: Renderer2){}
-
-  //@ViewChildren("input-container") public inputContainer: ElementRef;
 
     ngOnInit(): void {
         console.log("Sheet initialisaiton");
@@ -29,7 +28,11 @@ export class WordsComponent implements OnInit {
           
           (response: VocabularyWord[]) => {
               console.log("Now , I`m in the front-end with response : ", response );
-              this.words = response;
+              if(response.length === 0) this.display = "none"
+              else {
+                  this.display = "block"
+                  this.words = response;
+                }
               
           },
           (error: HttpErrorResponse) => {

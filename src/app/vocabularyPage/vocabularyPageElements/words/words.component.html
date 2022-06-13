@@ -6,6 +6,7 @@
     </div>
     
     <div id="words">
+        <div class="alert alert-warning" [ngStyle]="{'display': display}" >Looks like there is no words. To add new word just click on <b>Add words</b> button </div>
        <app-word-item *ngFor="let word of words" [singleWord]="word" 
             (onDeleteWord)="DeleteWord(word)" (onEditWord)="EditWord($event)" (onStarToggle)="StarToggle($event)"></app-word-item>
     </div>
