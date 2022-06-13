@@ -7,6 +7,6 @@
         <a id="logOutLink" routerLink="/logIn" (click)="logout()">Log out</a>
         
         <p id="username">{{currentUser?.username}}</p>
-        <img id="userIcon" src="assets\userIcon.svg" alt="userIcon">
+        <img #userImg [ngStyle]="{'display': display}" id="userIcon" src="assets\userIcon.svg" alt="userIcon">
     </div>
 </html>

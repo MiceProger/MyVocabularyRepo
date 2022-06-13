@@ -1,4 +1,4 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, EventEmitter, OnInit, Output, Renderer2, ViewChild } from '@angular/core';
 import { User } from '../User';
 import { UserService } from '../user.service';
 
@@ -8,15 +8,20 @@ import { UserService } from '../user.service';
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.css']
 })
-export class HeaderComponent {
+export class HeaderComponent implements AfterViewInit{
   public currentUser?:User;
 
-  constructor( private userService:UserService) { 
+  display:string;
+
+  constructor( private userService:UserService, private renderer:Renderer2) {}
+
+  @ViewChild("userImg") private userImg:ElementRef;
+  ngAfterViewInit(): void {
     this.userService.user.subscribe((user:User) => {
       console.log("UserSubject has changed with : " + user)
       this.currentUser = user; 
-      if(user) document.getElementById("userIcon")!.style.display = "noneblock"
-      else document.getElementById("userIcon")!.style.display = "none"
+      if(user) this.display = "block"
+      else this.display = "none"
     }
     ); 
   }
