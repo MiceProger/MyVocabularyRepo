@@ -28,9 +28,9 @@ export class WordsComponent implements OnInit {
           
           (response: VocabularyWord[]) => {
               console.log("Now , I`m in the front-end with response : ", response );
-              if(response.length === 0) this.display = "none"
+              if(response.length === 0) this.display = "block"
               else {
-                  this.display = "block"
+                  this.display = "none"
                   this.words = response;
                 }
               
