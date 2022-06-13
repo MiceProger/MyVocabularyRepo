@@ -15,8 +15,8 @@ export class HeaderComponent {
     this.userService.user.subscribe((user:User) => {
       console.log("UserSubject has changed with : " + user)
       this.currentUser = user; 
-      if(user != undefined) document.getElementById("userIcon")!.style.display = "block"
-      else document.getElementById("userIcon")!.style.display = "none"
+      /* if(user != undefined) document.getElementById("userIcon")!.style.display = "block"
+      else document.getElementById("userIcon")!.style.display = "none" */
     }
     ); 
   }
