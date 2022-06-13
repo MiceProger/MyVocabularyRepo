@@ -43,7 +43,6 @@ export class UserService {
     // remove user from local storage and set current user to null
     localStorage.removeItem('user');
     this.userSubject.next(undefined);
-    this.router.navigateByUrl("/logIn");
 }
 
   signUp(username:string, password:string) {
