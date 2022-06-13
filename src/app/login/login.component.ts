@@ -17,6 +17,7 @@ export class LoginComponent {
 
   errorMessage:string;
   errordiv: HTMLElement| null ;
+  fieldTextType:boolean;
 
   constructor(
       private route: ActivatedRoute,
@@ -29,6 +30,9 @@ export class LoginComponent {
       sessionStorage.setItem('token', '');
   }
 
+  ToggleFieldTextType(){
+    this.fieldTextType = !this.fieldTextType;
+  }
 
   /* login() {
       this.userService.login(this.username, this.password).subscribe((isValid) => {
