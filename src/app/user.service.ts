@@ -18,7 +18,7 @@ export class UserService {
   
   constructor(private http:HttpClient, private router:Router) { 
     this.userSubject = new BehaviorSubject<User>(JSON.parse(localStorage.getItem('user')!));
-    this.user = this.userSubject.asObservable(); 
+    this.user = this.userSubject; 
   }
 
 
