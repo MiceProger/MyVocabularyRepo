@@ -69,10 +69,12 @@ a {
 }
 
 .input-group-append{
-    background-color: #fff;
-    border: none;
-
     position: absolute;
     top: 5px;
     left: 70%;
+}
+
+span{
+    background-color: #fff;
+    border: none;
 }

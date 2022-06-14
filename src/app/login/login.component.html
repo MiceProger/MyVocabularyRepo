@@ -6,7 +6,7 @@
         <form role="form" name="form" (submit)="f.form.valid && login()" #f="ngForm" novalidate>
             
                 <input name="UserName" type="text" placeholder="Username" [(ngModel)]="username" #un="ngModel" 
-                required autocomplete="new-password">
+                required autocomplete="new-password"> <br>
             
             
             <div class="alert alert-danger" *ngIf="f.submited && !un.valid"> 
@@ -19,7 +19,7 @@
 
                 <div class="input-group-append">
                     <span class="input-group-text"> <i class="fa fa-eye-slash" [ngClass]="{'fa-eye-slash' : !fieldTextType, 'fa-eye' : fieldTextType }" (click)="ToggleFieldTextType()"></i></span>
-                </div>
+                </div> <br>
             </div>
 
             <div class="alert alert-danger" *ngIf="f.submited && !un.valid"> 
