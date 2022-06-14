@@ -6,7 +6,7 @@
         <form role="form" name="form" (submit)="f.form.valid && login()" #f="ngForm" novalidate>
             
                 <input name="UserName" type="text" placeholder="Username" [(ngModel)]="username" #un="ngModel" 
-                required autocomplete="new-password"><br>
+                required autocomplete="new-password">
             
             
             <div class="alert alert-danger" *ngIf="f.submited && !un.valid"> 
@@ -15,7 +15,7 @@
             <div class="input-group">
                 
                 <input name="Password" type="text" placeholder="Password" [(ngModel)]="password" #pw="ngModel" 
-                    required autocomplete="new-password" [type]="fieldTextType ? 'text': 'password'"><br>
+                    required autocomplete="new-password" [type]="fieldTextType ? 'text': 'password'">
 
                 <div class="input-group-append">
                     <span class="input-group-text"> <i class="fa fa-eye-slash" [ngClass]="{'fa-eye-slash' : !fieldTextType, 'fa-eye' : fieldTextType }" (click)="ToggleFieldTextType()"></i></span>
