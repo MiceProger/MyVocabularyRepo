@@ -3,7 +3,6 @@ import { Injectable, NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
-import { MatProgressSpinnerModule } from "@angular/material/progress-spinner";
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
@@ -51,7 +50,7 @@ export class XhrInterceptor implements HttpInterceptor {
   imports: [
     BrowserModule, CommonModule,
     AppRoutingModule, 
-    HttpClientModule,  FormsModule, NgbModule, BrowserAnimationsModule, MatProgressSpinnerModule
+    HttpClientModule,  FormsModule, NgbModule, BrowserAnimationsModule,
   ],
   providers: [WordService],
   bootstrap: [AppComponent]
