@@ -12,7 +12,5 @@
        <app-word-item *ngFor="let word of words" [singleWord]="word" 
             (onDeleteWord)="DeleteWord(word)" (onEditWord)="EditWord($event)" (onStarToggle)="StarToggle($event)"></app-word-item>
     </div>
-
-    <mat-spinner *ngIf="loading" ></mat-spinner>
     
 </html>
