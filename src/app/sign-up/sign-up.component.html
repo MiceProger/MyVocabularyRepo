@@ -24,8 +24,16 @@
         <div id="emptyDiv">{{errorMessage}}</div>
         <form (ngSubmit)="signUp()" #f="ngForm"  novalidate>
             <input name="UserName" type="text" placeholder="Username" [(ngModel)]="username" #un="ngModel" required ><br>
-            <input name="Password" type="text" placeholder="Password" [(ngModel)]="password" #ps="ngModel" required ><br>
-            <input name="MatchPassword" type="text" placeholder="Matching password" [(ngModel)]="machingPassword" #mp="ngModel" required ><br>
+            <div class="input-group">
+                
+                <input name="Password" type="text" placeholder="Password" [(ngModel)]="password" #pw="ngModel" 
+                    required [type]="fieldTextType ? 'text': 'password'">
+
+                <div class="input-group-append">
+                    <span class="input-group-text"> <i class="fa fa-eye-slash" [ngClass]="{'fa-eye-slash' : !fieldTextType, 'fa-eye' : fieldTextType }" (click)="ToggleFieldTextType()"></i></span>
+                </div> 
+            </div><br>
+            <input name="MatchPassword" type="text" placeholder="Matching password" [(ngModel)]="machingPassword" #mp="ngModel" required [type]="fieldTextType ? 'text': 'password'"><br>
             <button name="btn btn-info" type="submit" [disabled]="f.invalid"> Sign Up </button>
         </form>
          <br>

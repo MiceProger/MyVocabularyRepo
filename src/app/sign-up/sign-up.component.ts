@@ -18,6 +18,7 @@ export class SignUpComponent implements OnInit {
   errorMessage:string;
   errorable:boolean = false ;
   errordiv: HTMLElement| null ;
+  fieldTextType: boolean;
   
 
   constructor(private route: ActivatedRoute, private router: Router, private http: HttpClient, private userService: UserService) { }
@@ -73,6 +74,10 @@ export class SignUpComponent implements OnInit {
       this.errorMessage = '';
     }
 
+  }
+
+  ToggleFieldTextType(){
+    this.fieldTextType = !this.fieldTextType
   }
 
 }

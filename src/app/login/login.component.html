@@ -19,8 +19,8 @@
 
                 <div class="input-group-append">
                     <span class="input-group-text"> <i class="fa fa-eye-slash" [ngClass]="{'fa-eye-slash' : !fieldTextType, 'fa-eye' : fieldTextType }" (click)="ToggleFieldTextType()"></i></span>
-                </div> <br>
-            </div>
+                </div> 
+            </div><br>
 
             <div class="alert alert-danger" *ngIf="f.submited && !un.valid"> 
                Password is required </div>

@@ -71,7 +71,7 @@ a {
 .input-group-append{
     position: absolute;
     top: 5px;
-    left: 70%;
+    right: 15%;
 }
 
 span{

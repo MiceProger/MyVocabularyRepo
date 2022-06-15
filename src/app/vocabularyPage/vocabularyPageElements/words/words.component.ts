@@ -13,6 +13,7 @@ import { UserService } from 'src/app/user.service';
 export class WordsComponent implements OnInit {
   public words: VocabularyWord[] = [];
   public display: string;
+  public loading: boolean;
 
   constructor(private wordService: WordService, private userService: UserService, private renderer: Renderer2){}
 
@@ -23,22 +24,25 @@ export class WordsComponent implements OnInit {
 
     public getWords(): void{
       console.log("Now I`m trying to fetch words from DB");
-      
+
+      this.loading = true;
+
       this.wordService.getWords().subscribe(
           
           (response: VocabularyWord[]) => {
-              console.log("Now , I`m in the front-end with response : ", response );
-              if(response.length === 0) this.display = "block"
-              else {
-                  this.display = "none"
-                  this.words = response;
-                }
-              
+            console.log("Now , I`m in the front-end with response : ", response );
+            if(response.length === 0) this.display = "block"
+            else {
+                this.display = "none"
+                this.words = response;
+            }
+            this.loading = false;
           },
           (error: HttpErrorResponse) => {
               console.log("Smth goes wrong. There is an error in getWords() ", error.message);
               
               alert(error.message);
+              this.loading = false;
           }
       );
     }
