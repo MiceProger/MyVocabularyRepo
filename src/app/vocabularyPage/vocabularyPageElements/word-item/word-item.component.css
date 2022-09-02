@@ -1,13 +1,14 @@
 /*Styling for word card*/
 .card{
-  width: 50%;
   background-color: #e9e9e9;
-  margin: auto;
   margin-bottom: 10px;
+  flex: 0 1 300px;
 }
 
 #translation{
-  font-size: 17px;
+  font-size: large;
+  font-weight: 400;
+  margin-bottom: 20px;
 }
 
 #card-word{
